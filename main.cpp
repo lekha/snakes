@@ -1,14 +1,15 @@
 /*******************************************************************
 *   File         : main.cpp                                        *
-*   Author(s)    : Lekha & Ethan                                   *
+*   Author(s)    : Lekha K & Ethan W                               *
 *   Project      : SNAKE                                           *
-*   Creation Date: 3/8/2015                                        *
-*   Last Modified: 3/8/2015 - EW                                   *
-*   Purpose      : Main cpp file for snake game.                   *
+*   Creation Date: 03/08/2015 - EW                                 *
+*   Last Modified: 03/10/2015 - EW                                 *
+*   Purpose      : Main cpp file for snake game                    *
 *******************************************************************/
 
 #include <iostream>                     // Used for cin/cout
 #include <cstdlib>                      // Used for system in the clearScreen function
+#include "snake.h"                      // Used for snake class
 
 using namespace std;
 
@@ -21,13 +22,17 @@ char BOARD[HEIGHT][WIDTH];
 // Function prototypes
 void clearScreen();
 void initializeBoard();
+void updateBoard(Snake snk);
 void printBoard();
 
 int main()
 {
   initializeBoard();
   printBoard();
+  Snake snake;
+  updateBoard(snake);
 
+  
   return 0;
 }
 
@@ -36,9 +41,9 @@ int main()
 
 /*******************************************************************
 *   Function     : clearScreen()                                   *
-*   Creation Date: 3/8/2015 - EW                                   *
-*   Last Modified: 3/8/2015 - EW                                   *
-*   Purpose      : Clears screen so it can be redrawn.             *
+*   Creation Date: 03/08/2015 - EW                                 *
+*   Last Modified: 03/08/2015 - EW                                 *
+*   Purpose      : Clears screen so it can be redrawn              *
 *******************************************************************/
 void clearScreen()
 {
@@ -52,14 +57,14 @@ void clearScreen()
 
 /*******************************************************************
 *   Function     : initializeBoard()                               *
-*   Creation Date: 3/8/2015 - EW                                   *
-*   Last Modified: 3/8/2015 - EW                                   *
-*   Purpose      : Sets board to its initial state.                *
+*   Creation Date: 03/08/2015 - EW                                 *
+*   Last Modified: 03/08/2015 - EW                                 *
+*   Purpose      : Sets board to its initial state                 *
 *******************************************************************/
 void initializeBoard()
 {
   
-  for(int i = 0; i < HEIGHT; i++)          // Initialize char array to all ' '
+  for(int i = 0; i < HEIGHT; i++)           // Initialize char array to all ' '
   {
     for(int j = 0; j < WIDTH; j++)
     {
@@ -79,12 +84,25 @@ void initializeBoard()
     }
   }
 }
+/*******************************************************************
+*   Function     : updateBoard()                                   *
+*   Creation Date: 03/10/2015 - EW                                 *
+*   Last Modified: 03/10/2015 - EW                                 *
+*   Purpose      : Updates board with snake position               *
+*******************************************************************/
+void updateBoard(Snake snk)
+{
+  clearScreen();
+  initializeBoard();
+  BOARD[snk.GetSnakeX()][snk.GetSnakeY()] = '@';
+  printBoard();
+}
 
 /*******************************************************************
 *   Function     : printBoard()                                    *
-*   Creation Date: 3/8/2015 - EW                                   *
-*   Last Modified: 3/8/2015 - EW                                   *
-*   Purpose      : Draws board to console window.                  *
+*   Creation Date: 03/08/2015 - EW                                 *
+*   Last Modified: 03/08/2015 - EW                                 *
+*   Purpose      : Draws board to console window                   *
 *******************************************************************/
 void printBoard()
 {
