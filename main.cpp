@@ -24,15 +24,46 @@ void clearScreen();
 void initializeBoard();
 void updateBoard(Snake snk);
 void printBoard();
+void moveSnake();
 
 int main()
 {
   initializeBoard();
   printBoard();
+
   Snake snake;
+  char userInput;
+  bool gameOver = false;
   updateBoard(snake);
 
-  
+  while(!gameOver)
+  {
+    updateBoard(snake);
+    cout << endl << "Use WASD to move and Q to Quit" << endl;
+    cin >> userInput;
+    if(userInput == 'W' || userInput == 'w')
+    {
+      snake.SetPosition(1, snake.GetSnakeX()-1, snake.GetSnakeY(), 1);
+    }
+    else if(userInput == 'S' || userInput == 's')
+    {
+        snake.SetPosition(1, snake.GetSnakeX()+1, snake.GetSnakeY(), 1);
+    }
+    else if(userInput == 'A' || userInput == 'a')
+    {
+        snake.SetPosition(1, snake.GetSnakeX(), snake.GetSnakeY()-1, 1);
+    }
+    else if(userInput == 'D' || userInput == 'd')
+    {
+        snake.SetPosition(1, snake.GetSnakeX(), snake.GetSnakeY()+1, 1);
+    }
+    else if(userInput == 'Q' || userInput == 'q')
+    {
+        gameOver = true;
+    }
+
+  }
+
   return 0;
 }
 
@@ -63,7 +94,7 @@ void clearScreen()
 *******************************************************************/
 void initializeBoard()
 {
-  
+
   for(int i = 0; i < HEIGHT; i++)           // Initialize char array to all ' '
   {
     for(int j = 0; j < WIDTH; j++)

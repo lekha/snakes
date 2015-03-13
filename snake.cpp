@@ -23,10 +23,6 @@ using namespace std;
     Snake::Snake()
     {
       SetPosition( 1, (HEIGHT/2), (WIDTH/2), 1);
-      cout << endl << "DEFAULT" << endl;
-      cout << endl << HEIGHT << endl;
-      cout << endl << WIDTH << endl;
-      cout << endl << "END DEFAULT" << endl;
     }
 
 /*******************************************************************
@@ -38,11 +34,6 @@ using namespace std;
     Snake::Snake(int length, int snakeX, int snakeY, int speed)
     {
       SetPosition( length, snakeX, snakeY, speed);
-      cout << endl << "Overloaded" << endl;
-      cout << endl << snakeX << endl;
-      cout << endl << snakeY << endl;
-      cout << endl << "END Overloaded" << endl;
-
     }
 
 /*******************************************************************
@@ -53,8 +44,7 @@ using namespace std;
 *******************************************************************/
     Snake::~Snake()
     {
-      cout << endl << "DECONSTRUCTOR" << endl;
-      cout << endl << "END DECONSTRUCTOR" << endl;
+
     }
 
 /*******************************************************************
@@ -69,8 +59,5 @@ using namespace std;
       m_snakeX = snakeX;
       m_snakeY = snakeY;
       m_speed  = speed;
-      cout << endl << "SetPosition" << endl;
-      cout << endl << snakeX << endl;
-      cout << endl << snakeY << endl;
-      cout << endl << "END SetPosition" << endl;
+
     }

@@ -30,4 +30,5 @@
 # CodeBlocks
 *.cbp
 *.layout
+*.depend
 bin/
