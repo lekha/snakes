@@ -3,7 +3,7 @@
 *   Author(s)    : Lekha K & Ethan W                               *
 *   Project      : SNAKE                                           *
 *   Creation Date: 3/10/2015 - EW                                  *
-*   Last Modified: 3/10/2015 - EW                                  *
+*   Last Modified: 3/12/2015 - EW                                  *
 *   Purpose      : The cpp file for the snake class defines        *
 *                  the snakes functions                            *
 /******************************************************************/
@@ -17,7 +17,7 @@ using namespace std;
 /*******************************************************************
 *   Function     : Snake()                                         *
 *   Creation Date: 03/10/2015 - EW                                 *
-*   Last Modified: 03/10/2015 - EW                                 *
+*   Last Modified: 03/12/2015 - EW                                 *
 *   Purpose      : Default Snake constructor sets default position *
 *******************************************************************/
     Snake::Snake()
@@ -28,7 +28,7 @@ using namespace std;
 /*******************************************************************
 *   Function     : Snake()                                         *
 *   Creation Date: 03/10/2015 - EW                                 *
-*   Last Modified: 03/10/2015 - EW                                 *
+*   Last Modified: 03/12/2015 - EW                                 *
 *   Purpose      : Overloaded Snake constructor sets snake position*
 *******************************************************************/
     Snake::Snake(int length, int snakeX, int snakeY, int speed)
@@ -39,7 +39,7 @@ using namespace std;
 /*******************************************************************
 *   Function     : ~Snake()                                         *
 *   Creation Date: 03/10/2015 - EW                                 *
-*   Last Modified: 03/10/2015 - EW                                 *
+*   Last Modified: 03/12/2015 - EW                                 *
 *   Purpose      : Default Deconstructor                           *
 *******************************************************************/
     Snake::~Snake()
@@ -50,7 +50,7 @@ using namespace std;
 /*******************************************************************
 *   Function     : SetPosition()                                   *
 *   Creation Date: 03/10/2015 - EW                                 *
-*   Last Modified: 03/10/2015 - EW                                 *
+*   Last Modified: 03/12/2015 - EW                                 *
 *   Purpose      : Set private position variables of snake object  *
 *******************************************************************/
     void Snake::SetPosition(int length, int snakeX, int snakeY, int speed)

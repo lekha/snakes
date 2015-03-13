@@ -3,7 +3,7 @@
 *   Author(s)    : Lekha K & Ethan W                               *
 *   Project      : SNAKE                                           *
 *   Creation Date: 03/08/2015 - EW                                 *
-*   Last Modified: 03/10/2015 - EW                                 *
+*   Last Modified: 03/12/2015 - EW                                 *
 *   Purpose      : Main cpp file for snake game                    *
 *******************************************************************/
 
@@ -24,45 +24,16 @@ void clearScreen();
 void initializeBoard();
 void updateBoard(Snake snk);
 void printBoard();
-void moveSnake();
+void moveSnake(Snake snk);
 
 int main()
 {
-  initializeBoard();
-  printBoard();
-
   Snake snake;
-  char userInput;
-  bool gameOver = false;
+
+  initializeBoard();
   updateBoard(snake);
+  moveSnake(snake);
 
-  while(!gameOver)
-  {
-    updateBoard(snake);
-    cout << endl << "Use WASD to move and Q to Quit" << endl;
-    cin >> userInput;
-    if(userInput == 'W' || userInput == 'w')
-    {
-      snake.SetPosition(1, snake.GetSnakeX()-1, snake.GetSnakeY(), 1);
-    }
-    else if(userInput == 'S' || userInput == 's')
-    {
-        snake.SetPosition(1, snake.GetSnakeX()+1, snake.GetSnakeY(), 1);
-    }
-    else if(userInput == 'A' || userInput == 'a')
-    {
-        snake.SetPosition(1, snake.GetSnakeX(), snake.GetSnakeY()-1, 1);
-    }
-    else if(userInput == 'D' || userInput == 'd')
-    {
-        snake.SetPosition(1, snake.GetSnakeX(), snake.GetSnakeY()+1, 1);
-    }
-    else if(userInput == 'Q' || userInput == 'q')
-    {
-        gameOver = true;
-    }
-
-  }
 
   return 0;
 }
@@ -143,6 +114,44 @@ void printBoard()
     for(int j = 0; j < WIDTH; j++)
     {
       cout << " " << BOARD[i][j];
+    }
+  }
+}
+
+/*******************************************************************
+*   Function     : moveSnake()                                     *
+*   Creation Date: 03/12/2015 - EW                                 *
+*   Last Modified: 03/12/2015 - EW                                 *
+*   Purpose      : Changes snake position                          *
+*******************************************************************/
+void moveSnake(Snake snk)
+{
+  char userInput;
+  bool gameOver = false;
+  while(!gameOver)
+  {
+    updateBoard(snk);
+    cout << endl << "Use WASD to move and Q to Quit" << endl;
+    cin >> userInput;
+    if(userInput == 'W' || userInput == 'w')
+    {
+      snk.SetPosition(1, snk.GetSnakeX()-1, snk.GetSnakeY(), 1);
+    }
+    else if(userInput == 'S' || userInput == 's')
+    {
+        snk.SetPosition(1, snk.GetSnakeX()+1, snk.GetSnakeY(), 1);
+    }
+    else if(userInput == 'A' || userInput == 'a')
+    {
+        snk.SetPosition(1, snk.GetSnakeX(), snk.GetSnakeY()-1, 1);
+    }
+    else if(userInput == 'D' || userInput == 'd')
+    {
+        snk.SetPosition(1, snk.GetSnakeX(), snk.GetSnakeY()+1, 1);
+    }
+    else if(userInput == 'Q' || userInput == 'q')
+    {
+        gameOver = true;
     }
   }
 }

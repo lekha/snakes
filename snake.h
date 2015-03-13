@@ -3,7 +3,7 @@
 *   Author(s)    : Lekha K & Ethan W                               *
 *   Project      : SNAKE                                           *
 *   Creation Date: 3/10/2015 - EW                                  *
-*   Last Modified: 3/10/2015 - EW                                  *
+*   Last Modified: 3/12/2015 - EW                                  *
 *   Purpose      : The header file for the snake class declares    *
 *                  what a snake object can do and keeps track of   *
 *                  the snakes length, speed, and position          *
